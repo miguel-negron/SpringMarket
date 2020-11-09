@@ -11,28 +11,20 @@ public class Producto {
 	@GeneratedValue
 	private Long id;
 	private String nombre;
-	private Double precio;
 	private String descripcion;
-	private Integer unidades;
+	private Double precio;
+	private Integer descuento;
 
 	public Producto() {
 		super();
 	}
-	
-	public Producto(String nombre, Double precio, String descripcion) {
-		super();
-		this.nombre = nombre;
-		this.precio = precio;
-		this.descripcion = descripcion;
-		this.unidades = 0;
-	}
 
-	public Producto(String nombre, Double precio, String descripcion, Integer unidades) {
+	public Producto(String nombre, String descripcion, Double precio, Integer descuento) {
 		super();
 		this.nombre = nombre;
-		this.precio = precio;
 		this.descripcion = descripcion;
-		this.unidades = unidades;
+		this.precio = precio;
+		this.descuento = descuento;
 	}
 
 	public Long getId() {
@@ -51,14 +43,6 @@ public class Producto {
 		this.nombre = nombre;
 	}
 
-	public Double getPrecio() {
-		return precio;
-	}
-
-	public void setPrecio(Double precio) {
-		this.precio = precio;
-	}
-
 	public String getDescripcion() {
 		return descripcion;
 	}
@@ -67,12 +51,20 @@ public class Producto {
 		this.descripcion = descripcion;
 	}
 
-	public Integer getUnidades() {
-		return unidades;
+	public Double getPrecio() {
+		return precio;
 	}
 
-	public void setUnidades(Integer unidades) {
-		this.unidades = unidades;
+	public void setPrecio(Double precio) {
+		this.precio = precio;
+	}
+
+	public Integer getDescuento() {
+		return descuento;
+	}
+
+	public void setDescuento(Integer descuento) {
+		this.descuento = descuento;
 	}
 
 	@Override
@@ -80,10 +72,10 @@ public class Producto {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((descripcion == null) ? 0 : descripcion.hashCode());
+		result = prime * result + ((descuento == null) ? 0 : descuento.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
 		result = prime * result + ((precio == null) ? 0 : precio.hashCode());
-		result = prime * result + ((unidades == null) ? 0 : unidades.hashCode());
 		return result;
 	}
 
@@ -101,6 +93,11 @@ public class Producto {
 				return false;
 		} else if (!descripcion.equals(other.descripcion))
 			return false;
+		if (descuento == null) {
+			if (other.descuento != null)
+				return false;
+		} else if (!descuento.equals(other.descuento))
+			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -116,17 +113,13 @@ public class Producto {
 				return false;
 		} else if (!precio.equals(other.precio))
 			return false;
-		if (unidades == null) {
-			if (other.unidades != null)
-				return false;
-		} else if (!unidades.equals(other.unidades))
-			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Producto [id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", descripcion=" + descripcion
-				+ ", unidades=" + unidades + "]";
+		return "Producto [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio=" + precio
+				+ ", descuento=" + descuento + "]";
 	}
+
 }
