@@ -3,6 +3,7 @@ package com.dw2a.SpringMarket_Miguel_Adrian.daos;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import javax.persistence.EntityManager;
@@ -33,6 +34,16 @@ public abstract class DaoGenericoImpl<T> implements DaoGenerico<T> {
 		final Query query = this.em.createQuery(queryString.toString());
 
 		return (Long) query.getSingleResult();
+	}
+	
+	@Override
+	public List<T> listarTodos() {
+
+		final StringBuffer queryString = new StringBuffer("SELECT o from ");
+
+		final Query query = this.em.createQuery(queryString.toString());
+
+		return  query.getResultList();
 	}
 
 	@Override

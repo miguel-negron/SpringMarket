@@ -1,8 +1,23 @@
 package com.dw2a.SpringMarket_Miguel_Adrian.servicios;
 
-import org.springframework.stereotype.Service;
+import java.util.List;
 
-@Service
-public class ProductoService {
+import com.dw2a.SpringMarket_Miguel_Adrian.entidades.Producto;
+
+public interface ProductoService {
+
+	public Producto crearProducto(Producto Producto);
+
+	public void eliminarProducto(long idProducto);
+
+	public Producto obtenerProducto(long idProducto);
+	
+	public Producto obtenerProductoWhereNombre(String nombreProducto);
+
+	public Producto modificarProducto(Producto Producto);
+
+	public List<Producto> listarProductoes();
+
+	public List<Producto> listarProductoesQueNoImparten(Long idModulo);
 
 }
