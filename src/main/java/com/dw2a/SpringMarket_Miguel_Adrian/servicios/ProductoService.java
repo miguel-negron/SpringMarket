@@ -16,8 +16,6 @@ public interface ProductoService {
 
 	public Producto modificarProducto(Producto Producto);
 
-	public List<Producto> listarProductoes();
-
-	public List<Producto> listarProductoesQueNoImparten(Long idModulo);
+	public List<Producto> listarProductos();
 
 }
