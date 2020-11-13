@@ -38,6 +38,8 @@ public abstract class DaoGenericoImpl<T> implements DaoGenerico<T> {
 	
 	@Override
 	public List<T> listarTodos() {
+		
+		//TODO 		Hay que ver como se hace esto, porque asi da pedazo error
 
 		final StringBuffer queryString = new StringBuffer("SELECT o from ");
 

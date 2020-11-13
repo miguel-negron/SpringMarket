@@ -17,6 +17,6 @@ public class ProductoDaoImpl extends DaoGenericoImpl<Producto> implements Produc
 	public List<Producto> listarProductos() {
 		Query query = this.em.createQuery("FROM Producto");
 		List<Producto> lProducto = query.getResultList();
-		return null;
+		return lProducto;
 	}
 }
