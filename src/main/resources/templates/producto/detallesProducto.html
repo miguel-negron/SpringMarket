@@ -19,8 +19,9 @@
 					<div class="card-footer" th:text="'Descripción: ' +*{descripcion}"></div>
 					<div class="card-footer" th:text="'Precio: ' +*{precio} + '€'"></div>
 				</div>
-				<button type="button" class="btn btn-danger btn-lg">Borrar producto
-				</button>
+<!-- 				<button type="submit" th:method="get" class="btn btn-danger btn-lg" th:href="@{|/producto/borrar/*{id}|}">Borrar producto -->
+<!-- 				</button> -->
+<!-- 				<a th:href="@{|/producto/borrar/*{id}|}">Borrar</a> -->
 			</div>
 		</div>
 	</div>
