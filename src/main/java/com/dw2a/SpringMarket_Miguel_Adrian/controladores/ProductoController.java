@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.dw2a.SpringMarket_Miguel_Adrian.entidades.Producto;
 import com.dw2a.SpringMarket_Miguel_Adrian.servicios.ProductoService;
 
 @Controller
@@ -18,7 +19,8 @@ public class ProductoController {
 	@GetMapping("producto/{idProducto}")
 	public String getProductoWhereId(Model model, @PathVariable(name = "idProducto") String idProducto) {
 
-		productoService.obtenerProducto(Long.parseLong(idProducto));
+		Producto p = productoService.obtenerProducto(Long.parseLong(idProducto));
+		model.addAttribute("producto", p);
 		return "producto/detallesProducto";
 	}
 

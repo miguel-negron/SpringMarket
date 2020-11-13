@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html lang="es" xml:lang="es" xmlns:th="http://www.thymeleaf.org">
-
+<meta charset="UTF-8">
 <head th:replace="~{fragmentos/head::head}">
 
 </head>
-
 <body>
 
-	<nav class="navbar navbar-expand-sm bg-warning navbar-light"
-		th:fragment="barra_navegacion">
+	<nav class="navbar navbar-dark bg-dark" th:fragment="barra_navegacion">
 		<div class="navbar-header">
-			<a class="navbar-brand" th:href="@{/}"><b>Inicio</b></a>
-			<a class="navbar-brand" th:href="@{/}">Lista productos</a>
-			<a class="navbar-brand" th:href="@{/producto/crear}">Crear producto</a>
-			<a class="navbar-brand" th:href="@{/}">Buscar producto</a>
+			<a class="navbar-brand" th:href="@{/}"><b>Inicio</b></a> <a
+				class="navbar-brand" th:href="@{/}">Lista productos</a> <a
+				class="navbar-brand" th:href="@{/producto/crear}">Crear producto</a>
 			<a class="navbar-brand" th:href="@{/}">Borrar producto</a>
+			<hr style="Background-color:white;">
+
+
+			<!-- Links -->
+			<!-- 		<ul class="navbar-nav"> -->
+			<!-- 			<li class="nav-item"><a class="nav-link" th:href="@{/destroy}">Destroy</a></li> -->
+			<!-- 		</ul> -->
+
+
+			<!-- 		<a class="navbar-brand" th:href="@{/}">Buscar producto</a> -->
+			<form class="form-inline md-form mr-auto mb-4">
+
+				<input class="form-control mr-sm-2" type="search"
+					placeholder="Introduce el ID" aria-label="Search" size="52">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+			</form>
 		</div>
-		
-		<!-- Links -->
-		<ul class="navbar-nav">
-			<li class="nav-item"><a class="nav-link" th:href="@{/destroy}">Destroy</a></li>
-		</ul>
 	</nav>
-	
+
 </body>
 
 </html>

@@ -1,40 +1,33 @@
 <!DOCTYPE html>
 <html lang="es" xml:lang="es" xmlns:th="http://www.thymeleaf.org">
 
-	<head th:replace="~{fragmentos/imports::head}"></head>
-	
-	<body>
-	
-		<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
-	
-		<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<h3 class="text-center">
-				h3. Lorem ipsum dolor sit amet.
-			</h3>
-			<div class="card">
-				<h5 class="card-header">
-					Card title
-				</h5>
-				<div class="card-body">
-					<p class="card-text">
-						Card content
-					</p>
+<head th:replace="~{fragmentos/imports::head}"></head>
+
+<body>
+
+	<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12" th:object="${producto}">
+				<h3 class="text-center" th:text="*{nombre}"></h3>
+				<div class="card">
+					<h5 class="card-header" th:text="*{id}"></h5>
+					<div class="card-body">
+						<p class="card-text" th:text="*{descuento} + '%'">Card content
+						</p>
+					</div>
+					<div class="card-footer" th:text="*{descripcion}"></div>
+					<div class="card-footer" th:text="*{precio}"></div>
 				</div>
-				<div class="card-footer">
-					Card footer
-				</div>
-			</div> 
-			<button type="button" class="btn btn-danger btn-lg">
-				Button
-			</button>
+				<button type="button" class="btn btn-danger btn-lg">Borrar producto
+				</button>
+			</div>
 		</div>
 	</div>
-</div>
-		
-		
-		<div th:replace="~{fragmentos/imports::pie}"></div>
-	</body>
+
+
+	<div th:replace="~{fragmentos/imports::pie}"></div>
+</body>
 
 </html>
