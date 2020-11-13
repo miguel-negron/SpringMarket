@@ -13,45 +13,38 @@ import com.dw2a.SpringMarket_Miguel_Adrian.entidades.Producto;
 @Transactional
 @Service
 public class ProductoServiceImpl implements ProductoService {
-
+	
 	@Autowired
 	ProductoDao productoDao;
-	
+
 	@Override
-	public Producto crearProducto(Producto Producto) {
-		return productoDao.crear(Producto);
+	public Producto crearProducto(Producto producto) {
+		return productoDao.crear(producto);
 	}
 
 	@Override
 	public void eliminarProducto(long idProducto) {
-		productoDao.borrar(productoDao);
+		productoDao.borrar(obtenerProducto(idProducto));
 	}
 
 	@Override
 	public Producto obtenerProducto(long idProducto) {
-		return productoDao.buscar(productoDao);
-	}
-
-	@Override
-	public Producto modificarProducto(Producto Producto) {
-		return productoDao.actualizar(Producto);
-	}
-
-	@Override
-	public List<Producto> listarProductoes() {
-		return productoDao.listarTodos();
-	}
-
-	@Override
-	public List<Producto> listarProductoesQueNoImparten(Long idModulo) {
-		// TODO Auto-generated method stub
-		return null;
+		return productoDao.buscar(idProducto);
 	}
 
 	@Override
 	public Producto obtenerProductoWhereNombre(String nombreProducto) {
-		// TODO Auto-generated method stub
-		return null;
+		return null; //TODO
+	}
+
+	@Override
+	public Producto modificarProducto(Producto producto) {
+		return productoDao.actualizar(producto);
+	}
+
+	@Override
+	public List<Producto> listarProductos() {
+		return productoDao.listarTodos();
 	}
 
 }
