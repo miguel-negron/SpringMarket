@@ -1,13 +1,374 @@
 <!DOCTYPE html>
 <html lang="es" xml:lang="es" xmlns:th="http://www.thymeleaf.org">
-
+<meta charset="UTF-8">
 	<head th:replace="~{fragmentos/imports::head}"></head>
 	
 	<body>
 	
 		<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
 	
-		
+		<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-3">
+						<table class="table table-sm table-hover" th:each="p : ${productos}">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>producto</th>
+									<th th:text></th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>ID</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-active">
+									<td>1</td>
+									<td>Nombre</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-success">
+									<td>2</td>
+									<td>Descripción</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-warning">
+									<td>3</td>
+									<td>Precio</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-danger">
+									<td>4</td>
+									<td>Descuento</td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-md-3">
+						<table class="table table-sm table-hover">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>producto</th>
+									<th></th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>ID</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-active">
+									<td>1</td>
+									<td>Nombre</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-success">
+									<td>2</td>
+									<td>Descripción</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-warning">
+									<td>3</td>
+									<td>Precio</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-danger">
+									<td>4</td>
+									<td>Descuento</td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-md-3">
+						<table class="table table-sm table-hover">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>producto</th>
+									<th></th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>ID</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-active">
+									<td>1</td>
+									<td>Nombre</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-success">
+									<td>2</td>
+									<td>Descripción</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-warning">
+									<td>3</td>
+									<td>Precio</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-danger">
+									<td>4</td>
+									<td>Descuento</td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-md-3">
+						<table class="table table-sm table-hover">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>producto</th>
+									<th></th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>ID</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-active">
+									<td>1</td>
+									<td>Nombre</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-success">
+									<td>2</td>
+									<td>Descripción</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-warning">
+									<td>3</td>
+									<td>Precio</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-danger">
+									<td>4</td>
+									<td>Descuento</td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<table class="table table-sm table-hover">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>producto</th>
+									<th></th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>ID</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-active">
+									<td>1</td>
+									<td>Nombre</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-success">
+									<td>2</td>
+									<td>Descripción</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-warning">
+									<td>3</td>
+									<td>Precio</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-danger">
+									<td>4</td>
+									<td>Descuento</td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-md-3">
+						<table class="table table-sm table-hover">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>producto</th>
+									<th></th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>ID</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-active">
+									<td>1</td>
+									<td>Nombre</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-success">
+									<td>2</td>
+									<td>Descripción</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-warning">
+									<td>3</td>
+									<td>Precio</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-danger">
+									<td>4</td>
+									<td>Descuento</td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-md-3">
+						<table class="table table-sm table-hover">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>producto</th>
+									<th></th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>ID</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-active">
+									<td>1</td>
+									<td>Nombre</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-success">
+									<td>2</td>
+									<td>Descripción</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-warning">
+									<td>3</td>
+									<td>Precio</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-danger">
+									<td>4</td>
+									<td>Descuento</td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-md-3">
+						<table class="table table-sm table-hover">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>producto</th>
+									<th></th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>ID</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-active">
+									<td>2</td>
+									<td>Nombre</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-success">
+									<td>3</td>
+									<td>Descripción</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-warning">
+									<td>4</td>
+									<td>Precio</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr class="table-danger">
+									<td>4</td>
+									<td>Descuento</td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 		
 		
 		<div th:replace="~{fragmentos/imports::pie}"></div>

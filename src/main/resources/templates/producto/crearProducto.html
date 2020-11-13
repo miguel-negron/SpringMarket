@@ -1,80 +1,89 @@
 <!DOCTYPE html>
 <html lang="es" xml:lang="es" xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<head th:replace="~{fragmentos/imports::head}"></head>
 
-	<head th:replace="~{fragmentos/imports::head}"></head>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<body>
-	
-		<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
-	
-		<div class="card">
+<body>
 
-    <h5 class="card-header info-color white-text text-center py-4">
-        <strong>Dar de alta un producto</strong>
-    </h5>
+	<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
 
-    <!--Card content-->
-    <div class="card-body px-lg-5 pt-0">
+	<!-- Material form contact -->
+	<div class="card">
 
-        <!-- Form -->
-        <form class="text-center" style="color: #0c9ee2;" action="#!">
+		<h5 class="card-header info-color white-text text-center py-4">
+			<strong>Dar de alta un producto</strong>
+		</h5>
 
-           <!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Nombre"></label>  
-  <div class="col-md-4">
-  <input id="Nombre" name="Nombre" type="text" placeholder="Nombre del producto" class="form-control input-md">
-    
-  </div>
-</div>
+		<!--Card content-->
+		<div class="card-body px-lg-5 pt-0">
 
-            <!-- Textarea -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Descripcion"></label>
-  <div class="col-md-4">                     
-    <textarea class="form-control" id="Descripcion" name="Descripcion">Escribe aquí una breve descripción del producto.</textarea>
-  </div>
-</div>
+			<!-- Form -->
+			<form class="text-center" style="color: #0c9ee2;" action="#!">
 
-            <!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="id"></label>  
-  <div class="col-md-4">
-  <input id="id" name="id" type="text" placeholder="Id del producto" class="form-control input-md" required="">
-    
-  </div>
-</div>
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="Nombre"></label>
+					<div class="col-md-4">
+						<input id="Nombre" name="Nombre" type="text"
+							placeholder="Nombre del producto" class="form-control input-md">
 
-            <!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="precio"></label>  
-  <div class="col-md-4">
-  <input id="precio" name="precio" type="text" placeholder="Precio del producto" class="form-control input-md">
-    
-  </div>
-</div>
+					</div>
+				</div>
 
-            <!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="porcentaje"></label>  
-  <div class="col-md-4">
-  <input id="porcentaje" name="porcentaje" type="text" placeholder="Porcentaje de descuento" class="form-control input-md">
-    
-  </div>
-</div>
+				<!-- Textarea -->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="Descripcion"></label>
+					<div class="col-md-4">
+						<textarea class="form-control" id="Descripcion" name="Descripcion">Escribe aquÃ­ una breve descripciÃ³n del producto.</textarea>
+					</div>
+				</div>
 
-            <!-- Send button -->
-            <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Dar de alta</button>
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="id"></label>
+					<div class="col-md-4">
+						<input id="id" name="id" type="text" placeholder="Id del producto"
+							class="form-control input-md" required="">
 
-        </form>
-        <!-- Form -->
+					</div>
+				</div>
 
-    </div>
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="precio"></label>
+					<div class="col-md-4">
+						<input id="precio" name="precio" type="text"
+							placeholder="Precio del producto" class="form-control input-md">
 
-</div>
-		
-		
-		<div th:replace="~{fragmentos/imports::pie}"></div>
-	</body>
+					</div>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-md-4 control-label" for="porcentaje"></label>
+					<div class="col-md-4">
+						<input id="porcentaje" name="porcentaje" type="text"
+							placeholder="Porcentaje de descuento"
+							class="form-control input-md">
+
+					</div>
+				</div>
+
+				<!-- Send button -->
+				<button
+					class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect"
+					type="submit">Dar de alta</button>
+
+			</form>
+			<!-- Form -->
+
+		</div>
+
+	</div>
+
+
+
+	<div th:replace="~{fragmentos/imports::pie}"></div>
+</body>
 
 </html>

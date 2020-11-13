@@ -13,9 +13,9 @@ public class IndexController {
 		return "index";
 	}
 
-	@RequestMapping("/producto/crear")
+	@GetMapping("/producto/crear")
 	public String crearProducto(Model model) {
-		return "crearProducto";
+		return "producto/crearProducto";
 
 
 	}
