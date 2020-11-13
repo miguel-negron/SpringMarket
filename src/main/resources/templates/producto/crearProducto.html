@@ -18,13 +18,13 @@
 		<div class="card-body px-lg-5 pt-0" style="background-color:#3282b8;">
 
 			<!-- Form -->
-			<form class="text-center" style="color: #0c9ee2;" action="#!">
+			<form class="text-center" style="color: #0c9ee2;" th:method="post" th:action="@{/producto/crear}">
 
 				<!-- Text input-->
 				<div class="form-group">
 					<label class="col-md-4 control-label" for="Nombre"></label>
 					<div class="col-md-4">
-						<input id="Nombre" name="Nombre" type="text"
+						<input id="Nombre" name="nombre" type="text"
 							placeholder="Nombre del producto" class="form-control input-md">
 
 					</div>
@@ -34,7 +34,7 @@
 				<div class="form-group">
 					<label class="col-md-4 control-label" for="Descripcion"></label>
 					<div class="col-md-4">
-						<textarea class="form-control" id="Descripcion" name="Descripcion">Escribe aquí una breve descripción del producto.</textarea>
+						<textarea class="form-control" id="Descripcion" name="Descripcion" placeholder="Escribe aquí una breve descripción del producto."></textarea>
 					</div>
 				</div>
 

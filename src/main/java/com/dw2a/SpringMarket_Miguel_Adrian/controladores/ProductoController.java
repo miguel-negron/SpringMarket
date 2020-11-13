@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dw2a.SpringMarket_Miguel_Adrian.entidades.Producto;
 import com.dw2a.SpringMarket_Miguel_Adrian.servicios.ProductoService;
@@ -30,8 +31,17 @@ public class ProductoController {
 	}
 
 	@PostMapping("/producto/crear")
-	public String crearProductoEnvio(Model model) {
-		return "producto/crearProducto";
+	public String crearProductoEnvio(Model model,@RequestParam String nombre,@RequestParam String Descripcion,
+	@RequestParam Double precio, @RequestParam Integer porcentaje) {
+		
+		Producto p = new Producto(nombre, Descripcion, precio, porcentaje);
+		
+		System.out.println("OBJETO CREADO");
+		
+		productoService.crearProducto(p);
+		
+		
+		return "redirect:/producto/" + p.getId();
 	}
 
 	@GetMapping("producto/buscar")

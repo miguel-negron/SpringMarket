@@ -12,15 +12,20 @@
 				<h3 class="text-center" th:text="*{nombre}"></h3>
 				<div class="card">
 					<h5 class="card-header" th:text="'Id: ' + *{id}"></h5>
-					<div class="card-body">
-						<p class="card-text" th:text="'Descuento: ' + *{descuento} + '%'">Card content
-						</p>
-					</div>
 					<div class="card-footer" th:text="'Descripción: ' +*{descripcion}"></div>
 					<div class="card-footer" th:text="'Precio: ' +*{precio} + '€'"></div>
+					<div class="card-body">
+						<p class="card-text" th:text="'Descuento: ' + *{descuento} + '%'">Card
+							content</p>
+					</div>
+
+
 				</div>
-				<button type="button" class="btn btn-danger btn-lg">Borrar producto
-				</button>
+				<br>
+				<button type="button" class="btn btn-danger btn-lg">Borrar
+					producto</button>
+					<hr style="background-color:black;">
+					<p><i>Borrar un producto supondrá la pérdida de sus datos por completo. Se borrará directamente de la base de datos.</i></p>
 			</div>
 		</div>
 	</div>
