@@ -3,7 +3,6 @@ package com.dw2a.SpringMarket_Miguel_Adrian.controladores;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class IndexController {
@@ -13,10 +12,4 @@ public class IndexController {
 		return "index";
 	}
 
-	@GetMapping("/producto/crear")
-	public String crearProducto(Model model) {
-		return "producto/crearProducto";
-
-
-	}
 }
