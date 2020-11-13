@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="es" xml:lang="es" xmlns:th="http://www.thymeleaf.org">
-
+<meta charset="UTF-8">
 <head th:replace="~{fragmentos/imports::head}"></head>
-
 <body>
 
 	<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
@@ -12,13 +11,13 @@
 			<div class="col-md-12" th:object="${producto}">
 				<h3 class="text-center" th:text="*{nombre}"></h3>
 				<div class="card">
-					<h5 class="card-header" th:text="*{id}"></h5>
+					<h5 class="card-header" th:text="'Id: ' + *{id}"></h5>
 					<div class="card-body">
-						<p class="card-text" th:text="*{descuento} + '%'">Card content
+						<p class="card-text" th:text="'Descuento: ' + *{descuento} + '%'">Card content
 						</p>
 					</div>
-					<div class="card-footer" th:text="*{descripcion}"></div>
-					<div class="card-footer" th:text="*{precio}"></div>
+					<div class="card-footer" th:text="'Descripción: ' +*{descripcion}"></div>
+					<div class="card-footer" th:text="'Precio: ' +*{precio} + '€'"></div>
 				</div>
 				<button type="button" class="btn btn-danger btn-lg">Borrar producto
 				</button>

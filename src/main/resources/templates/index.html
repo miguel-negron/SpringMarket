@@ -42,13 +42,13 @@
 								<tr class="table-warning">
 									
 									<td>Precio</td>
-									<td th:text="${p.precio}"></td>
+									<td th:text="${p.precio} + '€'"></td>
 									<td></td>
 								</tr>
 								<tr class="table-danger">
 									
 									<td>Descuento</td>
-									<td th:text="${p.descuento}"></td>
+									<td th:text="${p.descuento} + '%'"></td>
 									<td></td>
 								</tr>
 							</tbody>
