@@ -22,8 +22,19 @@ public class ProductoController {
 
 		Producto p = productoService.obtenerProducto(Long.parseLong(idProducto));
 		model.addAttribute("producto", p);
+		
 		return "producto/detallesProducto";
 	}
+	
+	@GetMapping("producto/nombre/{idProducto}")
+	public String getProductoWhereNombre(Model model, @PathVariable(name = "nombreProducto") String idProducto) {
+
+		Producto p = productoService.obtenerProducto(Long.parseLong(idProducto));
+		model.addAttribute("producto", p);
+		
+		return "producto/detallesProducto";
+	}
+
 
 	@GetMapping("/producto/crear")
 	public String crearProducto(Model model) {
@@ -35,11 +46,8 @@ public class ProductoController {
 	@RequestParam Double precio, @RequestParam Integer porcentaje) {
 		
 		Producto p = new Producto(nombre, Descripcion, precio, porcentaje);
-		
-		System.out.println("OBJETO CREADO");
-		
+		System.out.println("(ProductoController.java) OBJETO CREADO");
 		productoService.crearProducto(p);
-		
 		
 		return "redirect:/producto/" + p.getId();
 	}
@@ -47,17 +55,14 @@ public class ProductoController {
 	@GetMapping("producto/buscar")
 	public String busquedaProductos(Model model) {
 		
-		
-		
 		return "producto/resultadosBusquedaProductos";
 	}
 
 	@GetMapping("/producto/borrar/{idProducto}")
 	public String borrarProducto(Model model, @PathVariable String idProducto) {
 		productoService.eliminarProducto(Long.parseLong(idProducto));
-		System.out.println("entra en borrar");
+		
 		return "redirect:/";
-
 	}
 
 }
