@@ -46,13 +46,15 @@ public class ProductoController {
 
 	@GetMapping("producto/buscar")
 	public String busquedaProductos(Model model) {
+		
+		
+		
 		return "producto/resultadosBusquedaProductos";
 	}
 
 	@GetMapping("/producto/borrar/{idProducto}")
 	public String borrarProducto(Model model, @PathVariable String idProducto) {
 		productoService.eliminarProducto(Long.parseLong(idProducto));
-		System.out.println("entra en borrar");
 		return "redirect:/index";
 	}
 

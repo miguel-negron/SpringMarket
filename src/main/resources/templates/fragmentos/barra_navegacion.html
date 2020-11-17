@@ -4,6 +4,12 @@
 <head th:replace="~{fragmentos/head::head}">
 
 </head>
+<style>
+.login{
+border: 1px solid white;
+float:right;
+}
+</style>
 <body>
 
 	<nav class="navbar navbar-dark bg-dark" th:fragment="barra_navegacion">
@@ -11,15 +17,19 @@
 			<a class="navbar-brand" th:href="@{/}"><b>Inicio</b></a> <a
 				class="navbar-brand" th:href="@{/}">Lista productos</a> <a
 				class="navbar-brand" th:href="@{/producto/crear}">Crear producto</a>
-			
+				<a class="navbar-brand" href="@{/login}">Inicia sesión</a>
 			<hr style="Background-color: white;">
 			<form class="form-inline md-form mr-auto mb-4">
 
 				<input class="form-control mr-sm-2" type="search"
-					placeholder="Introduce el ID" aria-label="Search" size="28">
+					placeholder="Introduce el ID" aria-label="Search" size="46">
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit" th:href="|/producto/id/|">Buscar</button>
+			
+			
+			
 			</form>
 		</div>
+	
 	</nav>
 
 </body>
