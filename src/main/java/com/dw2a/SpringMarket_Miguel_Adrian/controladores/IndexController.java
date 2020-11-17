@@ -18,5 +18,10 @@ public class IndexController {
 		model.addAttribute("productos", productoService.listarProductos());
 		return "index";
 	}
+	
+	@GetMapping("/index")
+	public String controller2(Model model) {
+		return "redirect/:index";
+	}
 
 }
