@@ -25,7 +25,7 @@ public class ProductoServiceImpl implements ProductoService {
 
 	@Override
 	public void eliminarProducto(long idProducto) {
-		productoDao.borrar(obtenerProducto(idProducto));
+		productoDao.borrar(idProducto);
 	}
 
 	@Override

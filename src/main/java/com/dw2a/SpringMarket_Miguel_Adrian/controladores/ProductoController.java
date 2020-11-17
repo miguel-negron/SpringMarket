@@ -53,7 +53,7 @@ public class ProductoController {
 	public String borrarProducto(Model model, @PathVariable String idProducto) {
 		productoService.eliminarProducto(Long.parseLong(idProducto));
 		System.out.println("entra en borrar");
-		return "redirect:/index";
+		return "redirect:/";
 	}
 
 }
