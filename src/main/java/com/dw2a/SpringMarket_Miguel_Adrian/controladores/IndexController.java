@@ -1,10 +1,14 @@
 package com.dw2a.SpringMarket_Miguel_Adrian.controladores;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.dw2a.SpringMarket_Miguel_Adrian.entidades.Producto;
 import com.dw2a.SpringMarket_Miguel_Adrian.servicios.ProductoService;
 
 @Controller
@@ -14,8 +18,22 @@ public class IndexController {
 
 	@GetMapping("/")
 	public String controller1(Model model) {
+		
+		List<Producto> productos = new ArrayList<>();
+		List<Producto> productosDB = productoService.listarProductos();
+		
+		for (int i = 0; i < productosDB.size(); i++) {
+			if (productosDB.get(i).getDescuento() != 0) {
+				productos.add(productosDB.get(i));
+			}
+			
+			if (productos.size() > 7) {
+				break;
+			}
+		}
 
-		model.addAttribute("productos", productoService.listarProductos());
+		model.addAttribute("productos", productos);
+		
 		return "index";
 	}
 	
