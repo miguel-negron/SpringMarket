@@ -19,7 +19,7 @@ public class SpringMarketMiguelAdrianApplication {
 	CommandLineRunner initDataProductos(ProductoService ps) {
 		return (args) -> {
 
-			for (int i = 0; i < 10; i++) {
+			for (int i = 1; i < 10; i++) {
 				Producto p = new Producto("nombre " + i, "descripcion " + i, Double.valueOf(i), (Integer) i);
 				ps.crearProducto(p);
 
