@@ -26,6 +26,14 @@ public class ProductoController {
 		return "producto/detallesProducto";
 	}
 	
+	@GetMapping("/listadoProductos")
+	public String listadoProductos(Model model) {
+
+		model.addAttribute("productos", productoService.listarProductos());
+		
+		return "producto/listadoProductos";
+	}
+	
 	@GetMapping("producto/nombre/{idProducto}")
 	public String getProductoWhereNombre(Model model, @PathVariable(name = "nombreProducto") String idProducto) {
 
