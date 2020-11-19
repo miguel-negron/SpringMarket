@@ -40,6 +40,7 @@ public class ProductoController {
 	public String crearProducto(Model model) {
 		return "producto/crearProducto";
 	}
+	
 	@GetMapping("/login")
 		public String login(Model model) {
 			return "login";
