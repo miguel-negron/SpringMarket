@@ -34,16 +34,6 @@ public class ProductoController {
 		return "producto/listadoProductos";
 	}
 	
-	@GetMapping("producto/nombre/{idProducto}")
-	public String getProductoWhereNombre(Model model, @PathVariable(name = "nombreProducto") String idProducto) {
-
-		Producto p = productoService.obtenerProducto(Long.parseLong(idProducto));
-		model.addAttribute("producto", p);
-		
-		return "producto/detallesProducto";
-	}
-
-
 	@GetMapping("/producto/crear")
 	public String crearProducto(Model model) {
 		return "producto/crearProducto";
@@ -66,8 +56,8 @@ public class ProductoController {
 		return "redirect:/producto/" + p.getId();
 	}
 
-	@GetMapping("producto/buscar")
-	public String busquedaProductos(Model model) {
+	@PostMapping("producto/buscar")
+	public String busquedaProductos(Model model, @RequestParam String nombreProducto) {
 		
 		return "producto/resultadosBusquedaProductos";
 	}

@@ -1,38 +1,31 @@
 <!DOCTYPE html>
 <html lang="es" xml:lang="es" xmlns:th="http://www.thymeleaf.org">
 <meta charset="UTF-8">
-<head th:replace="~{fragmentos/head::head}">
+<head th:replace="~{fragmentos/head::head}"></head>
 
-</head>
-<style>
-.login {
-	border: 1px solid white;
-	float: right;
-}
-</style>
 <body>
 
-	<nav class="navbar navbar-dark bg-dark" th:fragment="barra_navegacion">
-		<div class="navbar-header">
-			<a class="navbar-brand" th:href="@{/}"><b>Inicio</b></a> <a
-				class="navbar-brand" th:href="@{/listadoProductos}">Lista productos</a> <a
-				class="navbar-brand" th:href="@{/producto/crear}">Crear producto</a>
-			<a class="navbar-brand" href="@{/login}">Inicia sesión</a>
-			<a class="navbar-brand" href="@{/}">Regístrate</a>
-			<hr style="Background-color: white;">
-			<form class="form-inline md-form mr-auto mb-4">
-
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="barra_navegacion">
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarTogglerDemo01"
+			aria-controls="navbarTogglerDemo01" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+			<a class="navbar-brand" th:href="@{/}">SpringMarket</a>
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item"><a class="nav-link" th:href="@{/listadoProductos}">Lista productos</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/producto/crear}">Crear producto</a></li>
+				<li class="nav-item disabled"><a class="nav-link" th:href="@{/login}">Login</a></li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0" th:method="post"
+				th:action="@{/producto/buscar}">
 				<input class="form-control mr-sm-2" type="search"
-					placeholder="Introduce el ID" aria-label="Search"
-					name="nombreProducto" size="60">
-				<button class="btn btn-outline-success my-2 my-sm-0" type="submit"
-					th:href="@{|/producto/${nombreProducto}|}">Buscar</button>
-
-
-
+					placeholder="Nombre producto" aria-label="Search" th:name="nombreProducto">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
 			</form>
 		</div>
-
 	</nav>
 
 </body>
