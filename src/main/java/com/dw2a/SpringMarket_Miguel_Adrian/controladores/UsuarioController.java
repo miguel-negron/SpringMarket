@@ -16,22 +16,22 @@ public class UsuarioController {
 
 	@GetMapping("/usuario/signup")
 	public String signUpGet(Model model) {
-		return "login";
+		return "/usuario/registro";
 	}
 
 	@PostMapping("/usuario/signup")
 	public String signUpPost(Model model) {
-		return "login";
+		return "/usuario/registro";
 	}
 
 	@GetMapping("/usuario/login")
 	public String loginGet(Model model) {
-		return "login";
+		return "/usuario/login";
 	}
 
 	@PostMapping("/usuario/login")
 	public String loginPost(Model model) {
-		return "";
+		return "/usuario/login";
 	}
 
 	@GetMapping("/usuario/perfil/{idUsuario}")
