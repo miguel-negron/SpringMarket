@@ -39,11 +39,6 @@ public class ProductoController {
 		return "producto/crearProducto";
 	}
 
-	@GetMapping("/login")
-	public String login(Model model) {
-		return "login";
-	}
-
 	@PostMapping("/producto/crear")
 	public String crearProductoEnvio(Model model, @RequestParam String nombre, @RequestParam String Descripcion,
 			@RequestParam Double precio, @RequestParam Integer porcentaje) {
@@ -57,7 +52,7 @@ public class ProductoController {
 
 	@GetMapping("producto/buscar")
 	public String busquedaProductos(Model model, @RequestParam String nombreProducto) {
-		
+
 		model.addAttribute("listaProductos", productoService.obtenerProductoWhereNombre(nombreProducto));
 
 		return "producto/resultadosBusquedaProductos";
