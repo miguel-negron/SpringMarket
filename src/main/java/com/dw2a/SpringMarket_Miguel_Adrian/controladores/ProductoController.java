@@ -57,6 +57,8 @@ public class ProductoController {
 
 	@GetMapping("producto/buscar")
 	public String busquedaProductos(Model model, @RequestParam String nombreProducto) {
+		
+		model.addAttribute("listaProductos", productoService.obtenerProductoWhereNombre(nombreProducto));
 
 		return "producto/resultadosBusquedaProductos";
 	}

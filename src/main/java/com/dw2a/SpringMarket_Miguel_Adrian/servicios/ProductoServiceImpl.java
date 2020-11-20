@@ -34,8 +34,8 @@ public class ProductoServiceImpl implements ProductoService {
 	}
 
 	@Override
-	public Producto obtenerProductoWhereNombre(String nombreProducto) {
-		return null; //TODO
+	public List<Producto> obtenerProductoWhereNombre(String nombreProducto) {
+		return productoDao.selectProductosWhereNombre(nombreProducto); 
 	}
 
 	@Override
