@@ -11,7 +11,7 @@
 			<div class="col-md-12">
 				<div class="row">
 					<div class="col-md-3" th:each="p : ${productos}">
-						<div class="jumbotron">
+						<div class="jumbotron m-4 border border-primary">
 							<h2 th:text="${p.nombre}">nombre</h2>
 							<h5 th:text="'Precio: ' + ${p.precio}">precio</h5>
 							<p th:text="${p.descripcion}">descripcion</p>
