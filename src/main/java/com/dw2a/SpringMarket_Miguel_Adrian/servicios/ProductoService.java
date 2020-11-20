@@ -12,7 +12,7 @@ public interface ProductoService {
 
 	public Producto obtenerProducto(long idProducto);
 	
-	public Producto obtenerProductoWhereNombre(String nombreProducto);
+	public List<Producto> obtenerProductoWhereNombre(String nombreProducto);
 
 	public Producto modificarProducto(Producto Producto);
 

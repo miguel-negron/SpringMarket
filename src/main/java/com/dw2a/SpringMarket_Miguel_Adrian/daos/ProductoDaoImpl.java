@@ -19,4 +19,14 @@ public class ProductoDaoImpl extends DaoGenericoImpl<Producto> implements Produc
 		List<Producto> lProducto = query.getResultList();
 		return lProducto;
 	}
+
+	@Override
+	public List<Producto> selectProductosWhereNombre(String nombre) {
+		Query query = this.em.createQuery("SELECT p FROM Producto p WHERE p.nombre LIKE :nombre");
+		query.setParameter("nombre", "%" + nombre + "%");		
+		
+		List<Producto> lProducto = query.getResultList();
+		
+		return lProducto;
+	}
 }
