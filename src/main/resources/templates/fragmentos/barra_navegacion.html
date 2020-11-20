@@ -19,7 +19,7 @@
 				<li class="nav-item"><a class="nav-link" th:href="@{/producto/crear}">Crear producto</a></li>
 				<li class="nav-item disabled"><a class="nav-link" th:href="@{/login}">Login</a></li>
 			</ul>
-			<form class="form-inline my-2 my-lg-0" th:method="post"
+			<form class="form-inline my-2 my-lg-0" th:method="get"
 				th:action="@{/producto/buscar}">
 				<input class="form-control mr-sm-2" type="search"
 					placeholder="Nombre producto" aria-label="Search" th:name="nombreProducto">
