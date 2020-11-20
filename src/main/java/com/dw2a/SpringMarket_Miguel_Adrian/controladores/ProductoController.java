@@ -43,6 +43,11 @@ public class ProductoController {
 	public String login(Model model) {
 		return "login";
 	}
+	
+	@GetMapping("/registro")
+	public String registro(Model model) {
+		return "registro";
+	}
 
 	@PostMapping("/producto/crear")
 	public String crearProductoEnvio(Model model, @RequestParam String nombre, @RequestParam String Descripcion,
