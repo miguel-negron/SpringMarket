@@ -2,24 +2,33 @@ package com.dw2a.SpringMarket_Miguel_Adrian.entidades;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "PRODUCTO")
 public class Producto implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -4527211896391682339L;
-	
+
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@Column(name = "ID")
 	private Long id;
+	@Column(name = "NOMBRE")
 	private String nombre;
+	@Column(name = "DESCRIPCION")
 	private String descripcion;
+	@Column(name = "PRECIO")
 	private Double precio;
+	@Column(name = "DESCUENTO")
 	private Integer descuento;
 
 	public Producto() {
