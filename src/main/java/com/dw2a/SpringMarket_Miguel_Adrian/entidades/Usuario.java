@@ -26,46 +26,65 @@ public class Usuario implements Serializable {
 	private String password;
 	private String email;
 	private String fechaNac;
-
-	// DATOS DE PAGO
-
-	private Integer numeroTarjeta;
-	private Integer codigoSeguridad;
-	private String direccion;
-
-	public Usuario() {
-		super();
+	private DatosDePago datosDePago;
+	public Long getId() {
+		return id;
 	}
-
-	public Usuario(String nombre, String apellidos, String password, String email, String fechaNac,
-			Integer numeroTarjeta, Integer codigoSeguridad, String direccion) {
-		super();
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.password = password;
-		this.email = email;
-		this.fechaNac = fechaNac;
-		this.numeroTarjeta = numeroTarjeta;
-		this.codigoSeguridad = codigoSeguridad;
-		this.direccion = direccion;
 	}
-
+	public String getApellidos() {
+		return apellidos;
+	}
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getFechaNac() {
+		return fechaNac;
+	}
+	public void setFechaNac(String fechaNac) {
+		this.fechaNac = fechaNac;
+	}
+	public DatosDePago getDatosDePago() {
+		return datosDePago;
+	}
+	public void setDatosDePago(DatosDePago datosDePago) {
+		this.datosDePago = datosDePago;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((apellidos == null) ? 0 : apellidos.hashCode());
-		result = prime * result + ((codigoSeguridad == null) ? 0 : codigoSeguridad.hashCode());
-		result = prime * result + ((direccion == null) ? 0 : direccion.hashCode());
+		result = prime * result + ((datosDePago == null) ? 0 : datosDePago.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((fechaNac == null) ? 0 : fechaNac.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-		result = prime * result + ((numeroTarjeta == null) ? 0 : numeroTarjeta.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -80,15 +99,10 @@ public class Usuario implements Serializable {
 				return false;
 		} else if (!apellidos.equals(other.apellidos))
 			return false;
-		if (codigoSeguridad == null) {
-			if (other.codigoSeguridad != null)
+		if (datosDePago == null) {
+			if (other.datosDePago != null)
 				return false;
-		} else if (!codigoSeguridad.equals(other.codigoSeguridad))
-			return false;
-		if (direccion == null) {
-			if (other.direccion != null)
-				return false;
-		} else if (!direccion.equals(other.direccion))
+		} else if (!datosDePago.equals(other.datosDePago))
 			return false;
 		if (email == null) {
 			if (other.email != null)
@@ -110,11 +124,6 @@ public class Usuario implements Serializable {
 				return false;
 		} else if (!nombre.equals(other.nombre))
 			return false;
-		if (numeroTarjeta == null) {
-			if (other.numeroTarjeta != null)
-				return false;
-		} else if (!numeroTarjeta.equals(other.numeroTarjeta))
-			return false;
 		if (password == null) {
 			if (other.password != null)
 				return false;
@@ -122,88 +131,27 @@ public class Usuario implements Serializable {
 			return false;
 		return true;
 	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
+	public Usuario(Long id, String nombre, String apellidos, String password, String email, String fechaNac,
+			DatosDePago datosDePago) {
+		super();
 		this.id = id;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-
-	public String getApellidos() {
-		return apellidos;
-	}
-
-	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public String getFechaNac() {
-		return fechaNac;
-	}
-
-	public void setFechaNac(String fechaNac) {
 		this.fechaNac = fechaNac;
+		this.datosDePago = datosDePago;
 	}
-
-	public Integer getNumeroTarjeta() {
-		return numeroTarjeta;
-	}
-
-	public void setNumeroTarjeta(Integer numeroTarjeta) {
-		this.numeroTarjeta = numeroTarjeta;
-	}
-
-	public Integer getCodigoSeguridad() {
-		return codigoSeguridad;
-	}
-
-	public void setCodigoSeguridad(Integer codigoSeguridad) {
-		this.codigoSeguridad = codigoSeguridad;
-	}
-
-	public String getDireccion() {
-		return direccion;
-	}
-	
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", password=" + password
-				+ ", email=" + email + ", fechaNac=" + fechaNac + ", numeroTarjeta=" + numeroTarjeta
-				+ ", codigoSeguridad=" + codigoSeguridad + ", direccion=" + direccion + "]";
+				+ ", email=" + email + ", fechaNac=" + fechaNac + ", datosDePago=" + datosDePago + "]";
 	}
+	public Usuario() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	
 
 }
