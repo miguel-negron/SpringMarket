@@ -26,7 +26,8 @@
     <div class="card-body mx-4 mt-4">
 
       <!--Body-->
-      <div class="md-form">
+      <div class="md-form" th:method="post"
+				th:action="@{/usuario/crear}">
         <input type="text" id="Form-email4" class="form-control" name="nombre">
         <label for="Form-email4">Nombre de usuario</label>
       </div>

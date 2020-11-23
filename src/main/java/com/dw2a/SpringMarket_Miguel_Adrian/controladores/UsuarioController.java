@@ -5,7 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.dw2a.SpringMarket_Miguel_Adrian.entidades.DatosDePago;
+import com.dw2a.SpringMarket_Miguel_Adrian.entidades.Usuario;
 import com.dw2a.SpringMarket_Miguel_Adrian.servicios.UsuarioService;
 
 @Controller
@@ -49,4 +52,14 @@ public class UsuarioController {
 		return "";
 	}
 
+	@PostMapping("/usuario/crear")
+	public String crearUsuario(Model model,@RequestParam Long id, @RequestParam String nombre, @RequestParam String apellidos,
+			@RequestParam String password, @RequestParam String email, String fechaNac,@RequestParam DatosDePago datosDePago) {
+
+		Usuario u = new Usuario(id,nombre, apellidos, password, email, fechaNac, datosDePago);
+		System.out.println("(ProductoController.java) OBJETO CREADO");
+		usuarioService.crearUsuario(u);
+
+		return "redirect:/usuario/" + u.getId();
+	}
 }
