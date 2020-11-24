@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.dw2a.SpringMarket_Miguel_Adrian.entidades.DatosDePago;
 import com.dw2a.SpringMarket_Miguel_Adrian.entidades.Usuario;
 import com.dw2a.SpringMarket_Miguel_Adrian.servicios.UsuarioService;
 
@@ -19,12 +18,17 @@ public class UsuarioController {
 
 	@GetMapping("/usuario/signup")
 	public String signUpGet(Model model) {
-		return "/usuario/registro";
+		return "/usuario/signup";
 	}
 
 	@PostMapping("/usuario/signup")
-	public String signUpPost(Model model) {
-		return "/usuario/registro";
+	public String signUpPost(Model model, @RequestParam String nombre, @RequestParam String apellidos,
+			@RequestParam String password, @RequestParam String email, String fechaNac) {
+
+		Usuario usuario = new Usuario(nombre, apellidos, password, email, fechaNac);
+		usuarioService.crearUsuario(usuario);
+
+		return "redirect:/usuario/perfil" + usuario.getId();
 	}
 
 	@GetMapping("/usuario/login")
@@ -52,14 +56,4 @@ public class UsuarioController {
 		return "";
 	}
 
-	@PostMapping("/usuario/crear")
-	public String crearUsuario(Model model,@RequestParam Long id, @RequestParam String nombre, @RequestParam String apellidos,
-			@RequestParam String password, @RequestParam String email, String fechaNac,@RequestParam DatosDePago datosDePago) {
-
-		Usuario u = new Usuario(id,nombre, apellidos, password, email, fechaNac, datosDePago);
-		System.out.println("(ProductoController.java) OBJETO CREADO");
-		usuarioService.crearUsuario(u);
-
-		return "redirect:/usuario/" + u.getId();
-	}
 }

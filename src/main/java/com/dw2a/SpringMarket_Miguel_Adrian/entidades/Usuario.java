@@ -2,76 +2,107 @@ package com.dw2a.SpringMarket_Miguel_Adrian.entidades;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 
 public class Usuario implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1125823379597889500L;
 
 	@Id
-	@GeneratedValue
-
-	// DATOS PERSONALES DEL USUARIO
-
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID")
 	private Long id;
+	@Column(name = "NOMBRE")
 	private String nombre;
+	@Column(name = "APELLIDOS")
 	private String apellidos;
+	@Column(name = "PASSWORD")
 	private String password;
+	@Column(name = "EMAIL")
 	private String email;
-	private String fechaNac;
+	@Column(name = "FECHA_NACIMIENTO")
+	private String fechaNacimiento;
 	private DatosDePago datosDePago;
+	
+	public Usuario() {
+		super();
+	}
+
+	public Usuario(String nombre, String apellidos, String password, String email, String fechaNacimiento) {
+		super();
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.password = password;
+		this.email = email;
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 	public String getApellidos() {
 		return apellidos;
 	}
+
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getFechaNac() {
-		return fechaNac;
+
+	public String getFechaNacimiento() {
+		return fechaNacimiento;
 	}
-	public void setFechaNac(String fechaNac) {
-		this.fechaNac = fechaNac;
+
+	public void setFechaNacimiento(String fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
 	}
+
 	public DatosDePago getDatosDePago() {
 		return datosDePago;
 	}
+
 	public void setDatosDePago(DatosDePago datosDePago) {
 		this.datosDePago = datosDePago;
 	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -79,12 +110,13 @@ public class Usuario implements Serializable {
 		result = prime * result + ((apellidos == null) ? 0 : apellidos.hashCode());
 		result = prime * result + ((datosDePago == null) ? 0 : datosDePago.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + ((fechaNac == null) ? 0 : fechaNac.hashCode());
+		result = prime * result + ((fechaNacimiento == null) ? 0 : fechaNacimiento.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -109,10 +141,10 @@ public class Usuario implements Serializable {
 				return false;
 		} else if (!email.equals(other.email))
 			return false;
-		if (fechaNac == null) {
-			if (other.fechaNac != null)
+		if (fechaNacimiento == null) {
+			if (other.fechaNacimiento != null)
 				return false;
-		} else if (!fechaNac.equals(other.fechaNac))
+		} else if (!fechaNacimiento.equals(other.fechaNacimiento))
 			return false;
 		if (id == null) {
 			if (other.id != null)
@@ -131,27 +163,11 @@ public class Usuario implements Serializable {
 			return false;
 		return true;
 	}
-	public Usuario(Long id, String nombre, String apellidos, String password, String email, String fechaNac,
-			DatosDePago datosDePago) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.password = password;
-		this.email = email;
-		this.fechaNac = fechaNac;
-		this.datosDePago = datosDePago;
-	}
+
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", password=" + password
-				+ ", email=" + email + ", fechaNac=" + fechaNac + ", datosDePago=" + datosDePago + "]";
+				+ ", email=" + email + ", fechaNacimiento=" + fechaNacimiento + ", datosDePago=" + datosDePago + "]";
 	}
-	public Usuario() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
 	
-
 }
