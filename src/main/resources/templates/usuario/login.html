@@ -12,7 +12,7 @@
 
 	<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
 
-	<form th:method="post" th:action="@{/login}">
+	<form th:method="post" th:action="@{/usuario/login}">
 		<section class="form-simple">
 
 			<!--Form with header-->
@@ -33,12 +33,12 @@
 
 					<!--Body-->
 					<div class="md-form">
-						<input type="text" id="Form-email4" class="form-control">
+						<input type="text" id="Form-email4" class="form-control" name="nombre">
 						<label for="Form-email4">Nombre de usuario</label>
 					</div>
 
 					<div class="md-form pb-3">
-						<input type="password" id="Form-pass4" class="form-control">
+						<input type="password" id="Form-pass4" class="form-control" name="password">
 						<label for="Form-pass4">Contraseña</label>
 					</div>
 
