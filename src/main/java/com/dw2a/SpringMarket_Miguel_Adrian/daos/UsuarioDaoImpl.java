@@ -10,7 +10,7 @@ import com.dw2a.SpringMarket_Miguel_Adrian.entidades.Usuario;
 
 @Repository
 @Component("UsuarioDao")
-public abstract class UsuarioDaoImpl extends DaoGenericoImpl<Usuario> implements UsuarioDao {
+public class UsuarioDaoImpl extends DaoGenericoImpl<Usuario> implements UsuarioDao {
 
 	@PersistenceContext
 	protected EntityManager em;
