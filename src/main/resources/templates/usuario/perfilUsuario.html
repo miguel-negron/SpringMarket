@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragmentos/imports::head}"></head>
+
+<body>
+
+	<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
+
+	<div class="col-md-10 m-5" th:object="${usuario}">
+		<div class="card">
+			<h5 class="card-header" th:text="'Id: ' + *{id}"></h5>
+			<div class="card-body">
+				<p class="card-text" th:text="'Nombre: ' + *{nombre}">Card
+					content</p>
+				<p class="card-text" th:text="'Apellidos: ' + *{apellidos}">Card
+					content</p>
+				<p class="card-text" th:text="'Email: ' + *{email}">Card
+					content</p>
+				<p class="card-text" th:text="'Contraseña: ' + *{password}">Card
+					content</p>
+				<p class="card-text" th:text="'Fecha de nacimiento: ' + *{fechaNacimiento}">Card
+					content</p>
+			</div>
+		</div>
+	</div>
+
+
+	<div th:replace="~{fragmentos/imports::pie}"></div>
+</body>
+
+</html>

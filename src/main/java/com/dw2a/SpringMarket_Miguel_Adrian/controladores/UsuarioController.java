@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -28,7 +29,7 @@ public class UsuarioController {
 		Usuario usuario = new Usuario(nombre, apellidos, password, email, fechaNac);
 		usuarioService.crearUsuario(usuario);
 
-		return "redirect:/usuario/perfil" + usuario.getId();
+		return "redirect:/usuario/perfil/" + usuario.getId();
 	}
 
 	@GetMapping("/usuario/login")
@@ -42,13 +43,21 @@ public class UsuarioController {
 	}
 
 	@GetMapping("/usuario/perfil/{idUsuario}")
-	public String perfilGet(Model model) {
-		return "";
+	public String perfilGet(Model model, @PathVariable String idUsuario) {
+		
+		Usuario usuario = usuarioService.obtenerUsuario(Long.parseLong(idUsuario));
+		model.addAttribute("usuario", usuario);
+		
+		return "/usuario/perfilUsuario";
 	}
 
 	@PostMapping("/usuario/perfil/{idUsuario}")
-	public String perfilPost(Model model) {
-		return "";
+	public String perfilPost(Model model, @PathVariable String idUsuario) {
+		
+		Usuario usuario = usuarioService.obtenerUsuario(Long.parseLong(idUsuario));
+		model.addAttribute("usuario", usuario);
+		
+		return "/usuario/perfilUsuario";
 	}
 
 	@GetMapping("/usuario/logOut")

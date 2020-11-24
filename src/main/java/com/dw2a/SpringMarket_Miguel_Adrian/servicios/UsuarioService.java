@@ -12,8 +12,6 @@ public interface UsuarioService {
 
 	public Usuario obtenerUsuario(long idUsuario);
 
-	public List<Usuario> obtenerUsuarioWhereNombre(String nombreUsuario);
-
 	public Usuario modificarUsuario(Usuario Usuario);
 
 	public List<Usuario> listarUsuarios();
