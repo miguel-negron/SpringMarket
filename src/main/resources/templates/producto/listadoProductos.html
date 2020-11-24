@@ -22,8 +22,8 @@
 				<th scope="row"th:text="${p.id}">id</th>
 				<td th:text="${p.nombre}">nombre</td>
 				<td th:text="${p.descripcion}">descripcion</td>
-				<td th:text="${p.precio}">precio</td>
-				<td th:text="${p.descuento}">descuento</td>
+				<td th:text="${p.precio} + '₹' ">precio</td>
+				<td th:text="${p.descuento} + '%'">descuento</td>
 			</tr>
 		</tbody>
 	</table>

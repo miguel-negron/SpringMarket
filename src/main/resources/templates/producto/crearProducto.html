@@ -43,19 +43,9 @@
 
 				<!-- Text input-->
 				<div class="form-group">
-					<label class="col-md-4 control-label" for="id"></label>
-					<div class="col-md-4">
-						<input id="id" name="id" type="text" placeholder="Id del producto"
-							class="form-control input-md" required="">
-
-					</div>
-				</div>
-
-				<!-- Text input-->
-				<div class="form-group">
 					<label class="col-md-4 control-label" for="precio"></label>
 					<div class="col-md-4">
-						<input id="precio" name="precio" type="text"
+						<input id="precio" name="precio" type="number" step="0.01"
 							placeholder="Precio del producto" class="form-control input-md">
 
 					</div>
@@ -65,7 +55,7 @@
 				<div class="form-group">
 					<label class="col-md-4 control-label" for="porcentaje"></label>
 					<div class="col-md-4">
-						<input id="porcentaje" name="porcentaje" type="text"
+						<input id="porcentaje" name="porcentaje" type="number"
 							placeholder="Porcentaje de descuento"
 							class="form-control input-md">
 
@@ -76,7 +66,7 @@
 				<button
 					class="btn btn-info btn-rounded btn-block my-4 waves-effect"
 					type="submit">
-					<b>Dar de alta</b>
+					<b>Crear producto</b>
 				</button>
 
 			</form>
