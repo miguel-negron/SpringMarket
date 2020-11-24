@@ -33,6 +33,11 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
+	public Usuario obtenerUsuarioWhereNombre(String nombre) {
+		return usuarioDao.selectUsuarioWhereNombre(nombre);
+	}
+
+	@Override
 	public Usuario modificarUsuario(Usuario usuario) {
 		return usuarioDao.actualizar(usuario);
 	}

@@ -5,12 +5,14 @@ import java.util.List;
 import com.dw2a.SpringMarket_Miguel_Adrian.entidades.Usuario;
 
 public interface UsuarioService {
-	
+
 	public Usuario crearUsuario(Usuario Usuario);
 
 	public void eliminarUsuario(long idUsuario);
 
 	public Usuario obtenerUsuario(long idUsuario);
+
+	public Usuario obtenerUsuarioWhereNombre(String nombre);
 
 	public Usuario modificarUsuario(Usuario Usuario);
 
