@@ -25,11 +25,11 @@ public class LineaDeCompra implements Serializable {
 	private Long id;
 	
 	@ManyToOne
-	@JoinColumn(name = "ID_PRODUCTO", foreignKey = @ForeignKey(name = "ID_PRODUCTO_PK"))
+	@JoinColumn(name = "ID_PRODUCTO", foreignKey = @ForeignKey(name = "ID_PRODUCTO_LDC_FK"))
 	private Producto producto;
 
 	@ManyToOne
-	@JoinColumn(name = "ID_USUARIO", foreignKey = @ForeignKey(name = "ID_USUARIO_PK"))
+	@JoinColumn(name = "ID_USUARIO", foreignKey = @ForeignKey(name = "ID_USUARIO_LDC_FK"))
 	private Usuario usuario;
 	
 	@Column(name = "CANTIDAD")

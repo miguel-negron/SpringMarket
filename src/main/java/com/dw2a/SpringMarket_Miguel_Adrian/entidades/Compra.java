@@ -23,7 +23,7 @@ public class Compra implements Serializable{
 	private Long id;
 	
 	@ManyToOne
-	@JoinColumn(name = "ID_USUARIO", foreignKey = @ForeignKey(name = "ID_USUARIO_PK"))
+	@JoinColumn(name = "ID_USUARIO", foreignKey = @ForeignKey(name = "ID_USUARIO_COMPRA_FK"))
 	private Usuario usuario;
 	
 	@Column(name = "IS_TRAMITADA")

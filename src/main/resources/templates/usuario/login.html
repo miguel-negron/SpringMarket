@@ -4,50 +4,59 @@
 <meta charset="UTF-8">
 </head>
 <body>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<form th:method="post" th:action="@{/login}">
-<section class="form-simple">
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <!--Form with header-->
-  <div class="card">
+	<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
 
-    <!--Header-->
-    <div class="header pt-3 grey lighten-2">
+	<form th:method="post" th:action="@{/login}">
+		<section class="form-simple">
 
-      <div class="row d-flex justify-content-start">
-        <h3 class="deep-grey-text mt-3 mb-4 pb-1 mx-5">Inicio de sesión</h3>
-      </div>
+			<!--Form with header-->
+			<div class="card">
 
-    </div>
-    <!--Header-->
+				<!--Header-->
+				<div class="header pt-3 grey lighten-2">
 
-    <div class="card-body mx-4 mt-4">
+					<div class="row d-flex justify-content-start">
+						<h3 class="deep-grey-text mt-3 mb-4 pb-1 mx-5">Inicio de
+							sesión</h3>
+					</div>
 
-      <!--Body-->
-      <div class="md-form">
-        <input type="text" id="Form-email4" class="form-control">
-        <label for="Form-email4">Nombre de usuario</label>
-      </div>
+				</div>
+				<!--Header-->
 
-      <div class="md-form pb-3">
-        <input type="password" id="Form-pass4" class="form-control">
-        <label for="Form-pass4">Contraseña</label>
-      </div>
+				<div class="card-body mx-4 mt-4">
 
-      <div class="text-center mb-4">
-        <button type="button" class="btn btn-info btn-rounded btn-block my-4 waves-effect">Iniciar sesión</button>
-      </div>
-      <p class="font-small grey-text d-flex justify-content-center">¿No estás registrado? <a th:href="@{/usuario/registro}"
-          class="dark-grey-text font-weight-bold ml-1"> Regístrate</a></p>
-	<a th:href="@{/}" class="font-small grey-text d-flex justify-content-center"><b>Inicio</b></a>
-    </div>
+					<!--Body-->
+					<div class="md-form">
+						<input type="text" id="Form-email4" class="form-control">
+						<label for="Form-email4">Nombre de usuario</label>
+					</div>
 
-  </div>
-  <!--/Form with header-->
+					<div class="md-form pb-3">
+						<input type="password" id="Form-pass4" class="form-control">
+						<label for="Form-pass4">Contraseña</label>
+					</div>
 
-</section>
-</form>
+					<div class="text-center mb-4">
+						<button type="button"
+							class="btn btn-info btn-rounded btn-block my-4 waves-effect">Iniciar
+							sesión</button>
+					</div>
+					<p class="font-small grey-text d-flex justify-content-center">
+						¿No estás registrado? <a th:href="@{/usuario/registro}"
+							class="dark-grey-text font-weight-bold ml-1"> Regístrate</a>
+					</p>
+				</div>
+
+			</div>
+			<!--/Form with header-->
+
+		</section>
+	</form>
 </body>
 </html>
