@@ -16,7 +16,7 @@ public class CompraController {
 	
 	@GetMapping("/compra/miscompras")
 	public String miscomprasGet(Model modelo) {
-		return "";	
+		return "/compra/carrito";	
 	}
 	
 	@PostMapping("/compra/devolver/{idCompra}")
