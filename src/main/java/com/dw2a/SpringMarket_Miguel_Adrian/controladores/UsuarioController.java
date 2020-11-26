@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.dw2a.SpringMarket_Miguel_Adrian.entidades.DatosDePago;
 import com.dw2a.SpringMarket_Miguel_Adrian.entidades.Usuario;
 import com.dw2a.SpringMarket_Miguel_Adrian.servicios.UsuarioService;
 
@@ -35,10 +36,12 @@ public class UsuarioController {
 //		if (usuarioService.obtenerUsuarioWhereNombre(nombre) != null) {
 //			return "/usuario/signup";
 //		} else {
-			Usuario usuario = new Usuario(nombre, apellidos, password, email, fechaNac);
-			usuarioService.crearUsuario(usuario);
+		Usuario usuario = new Usuario(nombre, apellidos, password, email, fechaNac);
+		DatosDePago ddp = new DatosDePago(1, 1, "1");
+		usuario.setDatosDePago(ddp);
+		usuarioService.crearUsuario(usuario);
 
-			return "redirect:/usuario/perfil/" + usuario.getId();
+		return "redirect:/usuario/perfil/" + usuario.getId();
 //		}
 	}
 
@@ -48,15 +51,16 @@ public class UsuarioController {
 	}
 
 	@PostMapping("/usuario/login")
-	public String loginPost(Model model, HttpSession session, @RequestParam String nombre, @RequestParam String password) {
+	public String loginPost(Model model, HttpSession session, @RequestParam String nombre,
+			@RequestParam String password) {
 
 		Usuario usuario = usuarioService.obtenerUsuarioWhereNombre(nombre);
-		
+
 		if (usuario.getPassword().equals(password)) {
-			session.setAttribute("NOMBRE_USUARIO", usuario);
+			session.setAttribute("USUARIO", usuario);
 		}
 
-		return "/usuario/login";
+		return "redirect:/usuario/perfil/" + usuario.getId();
 	}
 
 	@GetMapping("/usuario/perfil/{idUsuario}")
@@ -77,9 +81,10 @@ public class UsuarioController {
 		return "/usuario/perfilUsuario";
 	}
 
-	@GetMapping("/usuario/logOut")
-	public String logOutGet(Model model) {
-		return "";
+	@GetMapping("/usuario/logout")
+	public String logOutGet(Model model, HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
 	}
 
 	/*
@@ -100,13 +105,13 @@ public class UsuarioController {
 
 	public String persistMessage(@RequestParam("msg") String msg, HttpServletRequest request) {
 		@SuppressWarnings("unchecked")
-		List<String> messages= (List<String>) request.getSession().getAttribute("NOMBRE_USUARIO");
-		if(messages== null) {
-			messages= new ArrayList<>();
+		List<String> messages = (List<String>) request.getSession().getAttribute("NOMBRE_USUARIO");
+		if (messages == null) {
+			messages = new ArrayList<>();
 			request.getSession().setAttribute("NOMBRE_USUARIO", messages);
-	}
+		}
 		messages.add(msg);
-	request.getSession().setAttribute("NOMBRE_USUARIO", messages);
-	return "redirect:/session";
+		request.getSession().setAttribute("NOMBRE_USUARIO", messages);
+		return "redirect:/session";
 	}
 }

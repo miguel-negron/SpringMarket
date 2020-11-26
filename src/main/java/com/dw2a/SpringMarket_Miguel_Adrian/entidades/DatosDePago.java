@@ -1,19 +1,27 @@
 package com.dw2a.SpringMarket_Miguel_Adrian.entidades;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
+public class DatosDePago implements Serializable{
 
-public class DatosDePago {
-
+	//
+	private static final long serialVersionUID = -2008549966167511595L;
+	
 	@Column(name = "NUMERO_TARJETA")
 	private Integer numeroTarjeta;
-	@Column(name = "CODIGO_SEGURIDAD")
+	@Column(name = "CODIGO_SEGURIDAD", nullable = true)
 	private Integer codigoSeguridad;
 	@Column(name = "DIRECCION")
 	private String direccion;
 	
+	public DatosDePago() {
+		super();
+	}
+
 	public DatosDePago(Integer numeroTarjeta, Integer codigoSeguridad, String direccion) {
 		super();
 		this.numeroTarjeta = numeroTarjeta;
