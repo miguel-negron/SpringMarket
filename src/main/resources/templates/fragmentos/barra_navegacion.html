@@ -29,8 +29,9 @@
 			        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 			          <a class="dropdown-item" th:href="@{/usuario/signup}" th:if="${session.USUARIO} == null">Registrarse</a>
 			          <a class="dropdown-item" th:href="@{/usuario/login}" th:if="${session.USUARIO} == null">Iniciar sesión</a>
-			          <a class="dropdown-item" th:href="@{/usuario/logout}" th:if="${session.USUARIO} != null">Log Out</a>
+			          <a class="dropdown-item" th:href="@{|/usuario/perfil/${session.USUARIO.id}|}" th:if="${session.USUARIO} != null">Perfil</a>
 			          <a class="dropdown-item" th:href="@{/compra/miscompras}" th:if="${session.USUARIO} != null">Carrito</a>
+			          <a class="dropdown-item" th:href="@{/usuario/logout}" th:if="${session.USUARIO} != null">Log Out</a>
 			        </div>
 			      </li>
 <!-- 				<li class="nav-item navbar-right"><a class="nav-link" th:href="@{/usuario/signup}">Registrarse</a></li> -->
