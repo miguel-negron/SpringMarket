@@ -41,5 +41,10 @@ public class IndexController {
 	public String controller2(Model model) {
 		return "redirect/:index";
 	}
+	
+	@GetMapping("/error")
+	public String errorGet() {
+		return "error";
+	}
 
 }
