@@ -44,7 +44,6 @@ public class ProductoController {
 			@RequestParam Double precio, @RequestParam Integer porcentaje) {
 
 		Producto p = new Producto(nombre, Descripcion, precio, porcentaje);
-		System.out.println("(ProductoController.java) OBJETO CREADO");
 		productoService.crearProducto(p);
 
 		return "redirect:/producto/" + p.getId();
@@ -60,6 +59,7 @@ public class ProductoController {
 
 	@GetMapping("/producto/borrar/{idProducto}")
 	public String borrarProducto(Model model, @PathVariable String idProducto) {
+		
 		productoService.eliminarProducto(Long.parseLong(idProducto));
 
 		return "redirect:/";
