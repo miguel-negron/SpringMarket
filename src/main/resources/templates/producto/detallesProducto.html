@@ -12,15 +12,18 @@
 				<h3 class="text-center" th:text="*{nombre}"></h3>
 				<div class="card">
 					<h5 class="card-header" th:text="'Id: ' + *{id}"></h5>
-					<div class="card-footer" th:text="'Descripción: ' +*{descripcion}"></div>
-					<div class="card-footer" th:text="'Precio: ' +*{precio} + '€'"></div>
 					<div class="card-body">
+						<p class="card-text" th:text="'Descripción: ' + *{descripcion}">Card
+							content</p>
+						<p class="card-text" th:text="'Precio: ' + *{precio} + '€'">Card
+							content</p>
 						<p class="card-text" th:text="'Descuento: ' + *{descuento} + '%'">Card
 							content</p>
 					</div>
 				</div>
 
 				<a th:href="@{|/producto/borrar/*{id}|}" class="btn btn-danger btn-lg m-3">Borrar producto</a>
+				<a th:href="@{|/producto/borrar/*{id}|}" class="btn btn-success btn-lg m-3">Añadir al carrito</a>
 				
 				<br>
 				
