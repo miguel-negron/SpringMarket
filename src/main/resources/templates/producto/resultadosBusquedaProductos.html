@@ -24,6 +24,7 @@
 				<td th:text="${p.descripcion}">descripcion</td>
 				<td th:text="${p.precio}">precio</td>
 				<td th:text="${p.descuento}">descuento</td>
+				<td><a th:href="@{|/producto/${p.id}}|">Ver</a></td>
 			</tr>
 		</tbody>
 	</table>
