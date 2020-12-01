@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es" xml:lang="es" xmlns:th="http://www.thymeleaf.org">
 
-	<head th:replace="~{fragmentos/imports::head}"></head>
-	
-	<body>
-	
-		<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
-	
-		<table class="table table-striped">
+<head th:replace="~{fragmentos/imports::head}"></head>
+
+<body>
+
+	<nav th:replace="~{fragmentos/barra_navegacion::barra_navegacion}"></nav>
+
+	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th scope="col">#</th>
@@ -18,18 +18,18 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr th:each="p : ${productos}">
-				<th scope="row"th:text="${p.id}">id</th>
-				<td th:text="${p.nombre}">nombre</td>
-				<td th:text="${p.descripcion}">descripcion</td>
-				<td th:text="${p.precio} + '₹' ">precio</td>
-				<td th:text="${p.descuento} + '%'">descuento</td>
+			<tr th:each="p : ${lineas}">
+				<th scope="row" th:text="${p.id}">id</th>
+				<td th:text="${p.compra}">nombre</td>
+				<td th:text="${p.cantidad}">descripcion</td>
+				<td th:text="${p.producto} + '₹' ">precio</td>
+				<td><a th:href="@{|/producto/${p.producto}}|">Ver</a></td>
 			</tr>
 		</tbody>
 	</table>
-		
-		
-		<div th:replace="~{fragmentos/imports::pie}"></div>
-	</body>
+
+
+	<div th:replace="~{fragmentos/imports::pie}"></div>
+</body>
 
 </html>

@@ -30,7 +30,7 @@ public class LineaDeCompra implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "ID_COMPRA", foreignKey = @ForeignKey(name = "ID_COMPRA_LDC_FK"))
-	private Usuario usuario;
+	private Compra compra;
 	
 	@Column(name = "CANTIDAD")
 	private Integer cantidad;
@@ -39,10 +39,10 @@ public class LineaDeCompra implements Serializable {
 		super();
 	}
 
-	public LineaDeCompra(Producto producto, Usuario usuario, Integer cantidad) {
+	public LineaDeCompra(Producto producto, Compra compra, Integer cantidad) {
 		super();
 		this.producto = producto;
-		this.usuario = usuario;
+		this.compra = compra;
 		this.cantidad = cantidad;
 	}
 
@@ -62,12 +62,12 @@ public class LineaDeCompra implements Serializable {
 		this.producto = producto;
 	}
 
-	public Usuario getUsuario() {
-		return usuario;
+	public Compra getCompra() {
+		return compra;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setCompra(Compra compra) {
+		this.compra = compra;
 	}
 
 	public Integer getCantidad() {
@@ -89,7 +89,7 @@ public class LineaDeCompra implements Serializable {
 		result = prime * result + ((cantidad == null) ? 0 : cantidad.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((producto == null) ? 0 : producto.hashCode());
-		result = prime * result + ((usuario == null) ? 0 : usuario.hashCode());
+		result = prime * result + ((compra == null) ? 0 : compra.hashCode());
 		return result;
 	}
 
@@ -117,17 +117,17 @@ public class LineaDeCompra implements Serializable {
 				return false;
 		} else if (!producto.equals(other.producto))
 			return false;
-		if (usuario == null) {
-			if (other.usuario != null)
+		if (compra == null) {
+			if (other.compra != null)
 				return false;
-		} else if (!usuario.equals(other.usuario))
+		} else if (!compra.equals(other.compra))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "LineaDeCompra [id=" + id + ", producto=" + producto + ", usuario=" + usuario + ", cantidad=" + cantidad
+		return "LineaDeCompra [id=" + id + ", producto=" + producto + ", compra=" + compra + ", cantidad=" + cantidad
 				+ "]";
 	}
 	

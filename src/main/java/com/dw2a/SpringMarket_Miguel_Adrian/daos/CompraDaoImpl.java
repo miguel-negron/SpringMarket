@@ -24,4 +24,22 @@ public class CompraDaoImpl extends DaoGenericoImpl<Compra> implements CompraDao{
 		
 		return listaCompras;
 	}
+
+	@Override
+	public Compra getCompraSinTramitar(Usuario usuario) {
+		Query query = this.em.createQuery("SELECT c FROM COMPRA c WHERE c.usuario LIKE :usuario AND c.isTramitada = false");
+		query.setParameter("usuario", usuario);		
+		
+		Compra compraSinTramitar;
+		
+		try {
+			compraSinTramitar = (Compra) query.getSingleResult();
+		} catch (Exception e) {
+			compraSinTramitar = new Compra(usuario);
+		}		
+		
+		crear(compraSinTramitar);
+		
+		return compraSinTramitar;
+	}
 }
