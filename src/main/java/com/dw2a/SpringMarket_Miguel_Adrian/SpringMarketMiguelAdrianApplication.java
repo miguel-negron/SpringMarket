@@ -20,7 +20,7 @@ public class SpringMarketMiguelAdrianApplication {
 		return (args) -> {
 
 			for (int i = 1; i < 10; i++) {
-				Producto p = new Producto("nombre " + i, "descripcion " + i, Double.valueOf(i), (Integer) i);
+				Producto p = new Producto("nombre producto" + i, "descripcion producto" + i, Double.valueOf(i), (Integer) i);
 				ps.crearProducto(p);
 
 			}

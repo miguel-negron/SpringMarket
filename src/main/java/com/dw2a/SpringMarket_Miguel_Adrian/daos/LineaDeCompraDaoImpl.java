@@ -16,7 +16,7 @@ public class LineaDeCompraDaoImpl extends DaoGenericoImpl<LineaDeCompra> impleme
 
 	public List<LineaDeCompra> listarLineasDeCompraWhereCompra(Compra compra) {
 
-		Query query = this.em.createQuery("SELECT l FROM linea_de_compra l WHERE l.compra LIKE :compra");
+		Query query = this.em.createQuery("SELECT l FROM LINEA_DE_COMPRA l WHERE l.compra LIKE :compra");
 		query.setParameter("compra", compra);
 
 		@SuppressWarnings("unchecked")

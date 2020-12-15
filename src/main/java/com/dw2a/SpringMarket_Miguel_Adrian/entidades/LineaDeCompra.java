@@ -10,10 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "LINEA_DE_COMPRA")
+@Entity(name = "LINEA_DE_COMPRA")
 public class LineaDeCompra implements Serializable {
 
 	//Serializable ID

@@ -14,15 +14,15 @@
 				<th scope="col">Nombre</th>
 				<th scope="col">Cantidad</th>
 				<th scope="col">Precio</th>
-				<th scope="col">Descuento</th>
+				<th scope="col">Hiperenlace</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr th:each="p : ${lineas}">
 				<th scope="row" th:text="${p.id}">id</th>
-				<td th:text="${p.compra}">nombre</td>
-				<td th:text="${p.cantidad}">descripcion</td>
-				<td th:text="${p.producto} + '₹' ">precio</td>
+				<td th:text="${p.producto.nombre}">nombre</td>
+				<td th:text="${p.cantidad}">nombre</td>
+				<td th:text="'₹' + ${p.producto.precio} ">precio</td>
 				<td><a th:href="@{|/producto/${p.producto}}|">Ver</a></td>
 			</tr>
 		</tbody>
